@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Rubik', 'Open Sans', 'sans-serif';
+
+  --app-background: hsl(270, 20%, 96%);
+  --heading: hsl(271, 36%, 24%);
+  --muted-text:  hsl(270, 7%, 64%);
+  --gradient: linear-gradient(to left, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+  --border: 1px solid hsl(289, 100%, 72%);
+  --send-background: hsl(276, 100%, 81%);
+}
+
+body {
+  height: 100vh;
+}
+
+.page-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-color: var(--app-background);
+}
+
+.show {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 17%;
+  position: relative;
+}
+
+.show::before,
+.show::after {
+  content: '';
+  position: absolute;
+  width: 40vw;
+  height: 80vh;
+}
+
+.show::before {
+  background-image: linear-gradient(45deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+  top: 0;
+  left: -20%;
+  border-radius: 0 0 50% 50%;
+}
+
+.show::after {
+  background-color: hsla(0, 1%, 75%, 0.288);
+  bottom: 0;
+  right: -20%;
+  border-radius: 50% 50% 0 0;
+}
+
+.desc,
+.illustration {
+  z-index: 2;
+}
+
+.desc {
+  width: 30%;
+}
+
+.desc h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--heading);
+}
+
+.desc p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--muted-text);
+  line-height: 1.75;
+}
+
+.illustration {
+  width: 325px;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: .65rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.screen {
+  background-color: #e6e0e0;
+  border-radius: 40px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: 2rem .5rem 1rem 1rem;
+  border-radius: 40px 40px 1rem 1rem;
+  background-image: var(--gradient);
+  color: #fff;
+  position: relative;
+}
+
+.notch {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 0 0 20px 20px;
+  width: 60%;
+  height: 1rem;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+img {
+  width: 50px;
+}
+
+i + img {
+  border-radius: 50%;
+  border: 2px solid azure;
+}
+
+i {
+  margin-right: 0 !important;
+  font-size: 1.5rem !important;
+}
+
+i.ellipsis {
+  margin-left: auto;
+}
+
+.status {
+  font-size: .8rem;
+  font-weight: 400;
+  color: var(--send-background);
+  margin-top: .25rem;
+}
+
+.name h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.chat-space {
+  padding: 1rem;
+}
+
+.chat {
+  width: 80%;
+  font-size: .8rem;
+  font-weight: 400;
+  padding: .5rem 1rem;
+  border-radius: .7rem;
+  letter-spacing: .25px;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.recieved {
+  margin-left: auto;
+  background-color: #fff;
+}
+
+.sent {
+  color: hsl(276, 55%, 52%);
+  background-color: hsla(276, 77%, 75%, 0.438);
+}
+
+.chat + .chat,
+.small-cta {
+  margin-top: .5rem;
+}
+
+.input,
+.small-cta {
+  display: flex;
+}
+
+.pictures {
+  margin: .8rem 0 .8rem auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 70%;
+}
+
+.pictures > img {
+  width: 30%;
+  border-radius: 1rem;
+}
+
+.small-cta {
+  max-width: 80%;
+  padding: .5rem 1rem;
+  color: #fff;
+  border-radius: 15px;
+  background-image: var(--gradient);
+  display: flex;
+  align-items: center;
+}
+
+.small-cta p {
+  font-size: .8rem;
+  font-weight: 400;
+  margin-left: .5rem;
+}
+
+.small-cta h2 {
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+.option {
+  width: 15px;
+  height: 15px;
+  border: var(--border);
+  border-radius: 50%;
+}
+
+.input {
+  margin-top: 1rem;
+  background-color: #fff;
+  border-radius: 40px;
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+}
+
+.input p {
+  font-size: .7rem;
+  color: var(--muted-text);
+  font-weight: 400;
+  margin-left: 1rem;
+}
+
+.send {
+  margin-left: auto;
+  background-color: var(--heading);
+  border-radius: 50%;
+  padding: 8px;
+  color: #fff;
+}
+
+.attribution {
+  text-align: center;
+  padding: .5rem 0;
+
+  background-image: var(--gradient);
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  transition: color 100ms linear;
+}
+
+a:hover {
+  color: yellow;
+}
+
+@media (max-width: 800px) {
+  .show { gap: 10%; }
+}
+
+@media (max-width: 650px) {
+
+  .show {
+    padding: 2.5rem 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .desc {
+    width: 90%;
+  }
+
+  .desc h1 {
+    text-align: center;
+  }
+
+  .illustration {
+    width: min(90%, 325px);
+  }
+
+  .show::before,
+  .show::after {
+    width: 60vw;
+  }
+
+
+}
